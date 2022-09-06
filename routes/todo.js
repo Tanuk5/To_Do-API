@@ -26,12 +26,12 @@ router.post('/', (req,res)=> {
 });
 
 //Edit of all todo
-router.put('/:id', (req,res)=> {
+router.put('/', (req,res)=> {
 
 });
 
 //Delete of all todo
-router.delete('/:id', (req,res)=> {
+router.delete('/', (req,res)=> {
 
 });
 
