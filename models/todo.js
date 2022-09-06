@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 const schema = mongoose.schema;
-const MOdel = mongoose.model;
+const Model = mongoose.model;
 
 const todoSchema = new mongoose.Schema({
     title: {
         type: String,
-        require: true,
+        required: true,
     },
     content: {
         type: String,
-        require: true,
+        required: true,
     },
     completed: {
         type: Boolean,
