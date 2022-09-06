@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Todo = require('../models/todo');
 
-
+//get
 router.get('/', (req, res) => {
     const page = req.query.page || 1;
     const limit = req.query.limit || 10;
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
       });
   });
   
-  
+  //create
   router.post('/create', (req, res) => {
     const todo = Todo({
       title: req.body.title,
@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
     });
   });
   
-   
+   //edit
   router.put('/:id', (req, res) => {
     Todo.findById(req.params.id)
       .exec((err, todo) => {
@@ -50,7 +50,7 @@ router.get('/', (req, res) => {
       });
   });
   
-  
+  //delete
   router.delete('/:id', (req, res) => {
     Todo.remove({
       _id: req.params.id
