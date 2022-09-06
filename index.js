@@ -1,12 +1,18 @@
-// console.log("hello tanu");
-// console.log("how are you");
-// console.log("I know you are not fine buddy");
+console.log("hello tanu");
+console.log("how are you");
+
 const express = require('express');
+const dotenv = require("dotenv");
+const todoRoutes = require('./routes/todo');
+
 const app = express();
-const PORT = 8880;
+dotenv.config();
+const PORT = process.env.PORT;
+
 
 app.use(express.json());  //we can also use body-parser
+app.use('./todo', todoRoutes);
 
-app.get('/', (req,res)=> res.json({'message':'your server is running '}));
+app.get('/', (req,res)=> res.json({'message':'your server is running'}));
 app.listen(PORT, () => console.log (`server started at ${PORT}`));
 
